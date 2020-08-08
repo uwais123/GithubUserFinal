@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Favorite User</string>
+    <string name="search" translatable="false">Search Username</string>
+    <string name="noResult" translatable="false">Find Users!</string>
+    <string name="searchForResult" translatable="false">Click Search Icon and Find What You looking for</string>
+    <string name="login" translatable="false">Login</string>
+    <string name="location" translatable="false">location</string>
+    <string name="repo" translatable="false">Repository</string>
+    <string name="language" translatable="false">Change Language</string>
+
+    <string name="tab_text1" translatable="false">followers</string>
+    <string name="tab_text2" translatable="false">following</string>
+    <string name="username" translatable="false">Username</string>
+    <string name="twiceback" translatable="false">Click BACK again to exit</string>
+    <string name="splash_copyright" translatable="false">Copyright © 2020 by Uwais Alqadri</string>
+    <string name="settings" translatable="false">Settings</string>
+    <string name="favorite" translatable="false">Favorite User</string>
+    <string name="reminder" translatable="false">Set Reminder</string>
+    <string name="empty" translatable="false">Favorite User is Empty</string>
+    <string name="reminderdesc" translatable="false">Send daily notification at 09.00 AM</string>
+</resources>

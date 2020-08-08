@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.activity.DetailActivity">
+
+
+    <RelativeLayout
+        android:id="@+id/profile_layout"
+        android:layout_width="match_parent"
+        android:layout_height="190dp"
+        android:background="@android:color/black"
+        android:padding="2dp">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/detail_avatar_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="-21dp"
+            android:layout_marginTop="20dp"
+            android:elevation="10dp"
+            app:cardCornerRadius="10dp">
+
+            <ImageView
+                android:id="@+id/detail_avatar"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginLeft="20dp"
+                android:background="@color/colorPrimary" />
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/detail_labels_parent"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="-20dp"
+            android:layout_toRightOf="@id/detail_avatar_parent"
+            android:elevation="15dp"
+            app:cardCornerRadius="10dp">
+
+            <RelativeLayout
+                android:layout_width="272dp"
+                android:layout_height="155dp"
+                android:background="@android:color/white">
+
+                <TextView
+                    android:id="@+id/detail_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginEnd="10dp"
+                    android:contentDescription="@string/username"
+                    android:fontFamily="@font/mregular"
+                    android:textColor="@android:color/black"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/detail_username"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/detail_name"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginEnd="10dp"
+                    android:contentDescription="@string/login"
+                    android:fontFamily="@font/msemibold"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/detail_company"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/detail_username"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="10dp"
+                    android:contentDescription="@string/repo"
+                    android:drawableStart="@drawable/ic_location_city"
+                    android:drawablePadding="5sp"
+                    android:fontFamily="@font/mmedium"
+                    android:textColor="@android:color/black"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:id="@+id/detail_location"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/detail_company"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:contentDescription="@string/location"
+                    android:drawableStart="@drawable/ic_location"
+                    android:drawablePadding="5sp"
+                    android:fontFamily="@font/mmedium"
+                    android:textColor="@android:color/black"
+                    android:textSize="13sp" />
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabs"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:layout_below="@id/profile_layout"
+        android:background="?attr/colorPrimary"
+        app:tabTextAppearance="@style/MyCustomTextAppearance"
+        app:tabTextColor="@android:color/white">
+
+
+    </com.google.android.material.tabs.TabLayout>
+
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/tabs" />
+
+</RelativeLayout>
