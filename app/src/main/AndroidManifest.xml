@@ -2,7 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.masuwes.githubuserfinal">
 
-    <uses-permission android:name="android.permission.INTERNET" /> <!-- permission to access local database -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+
+    <!-- permission to access local database -->
     <permission
         android:name="com.masuwes.githubuserfinal.READ_DATABASE"
         android:protectionLevel="normal" />
@@ -31,18 +34,22 @@
             android:readPermission="com.masuwes.githubuserfinal.READ_DATABASE"
             android:writePermission="com.masuwes.githubuserfinal.WRITE_DATABASE" />
 
-
-        <activity android:name=".ui.activity.FavoriteActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".ui.activity.SettingsActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".ui.activity.DetailActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".ui.activity.MainActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".ui.activity.SplashScreen"
-            android:screenOrientation="portrait"
+        <activity
+            android:name=".ui.activity.FavoriteActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.SettingsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.DetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.SplashScreen"
             android:noHistory="true"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -21,5 +21,4 @@
     <string name="appwidget_text" translatable="false">EXAMPLE</string>
     <string name="add_widget" translatable="false">Add widget</string>
     <string name="favorite_widget_empty" translatable="false">You doesn\'t have favorite users</string>
-    <string name="error_widget">Oops..</string>
 </resources>
