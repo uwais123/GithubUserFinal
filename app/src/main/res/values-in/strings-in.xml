@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Submission Final</string>
-    <string name="home_title">Github FindUser</string>
     <string name="search" >Cari Nama Pengguna</string>
     <string name="noResult">Temukan Pengguna!</string>
     <string name="searchForResult">Klik ikon pencarian untuk mulai mencari</string>
@@ -19,7 +18,8 @@
     <string name="reminder">Setel Pengingat</string>
     <string name="empty">Pengguna Favorit Kosong</string>
     <string name="reminderdesc">Kirim notifikasi harian setiap 09.00 Pagi</string>
-    <string name="appwidget_text">EXAMPLE</string>
-    <string name="add_widget">Tambahkan Widget</string>
     <string name="favorite_widget_empty">Anda tidak memiliki pengguna favorite</string>
+    <string name="notification_text_on_nine">Sekarang pukul 09.00 AM, waktunya membuka aplikasi!</string>
+    <string name="reminder_off_toast">Pengingat mati</string>
+    <string name="reminder_on_toast">Pengingat nyala</string>
 </resources>

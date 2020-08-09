@@ -24,7 +24,7 @@ class AlarmReceiver : BroadcastReceiver() {
     companion object {
         // alarm type
         const val TYPE_ALARM_REPEATING = "GitHubUser"
-        const val TYPE_ALARM_ONE_TIME = "OnetTImeAlarm"
+        const val TYPE_ALARM_ONE_TIME = "OneTimeAlarm"
 
         // intent
         const val EXTRA_TYPE = "type"
@@ -67,7 +67,7 @@ class AlarmReceiver : BroadcastReceiver() {
         val pendingIntent = PendingIntent.getBroadcast(context, ID_REPEATING, intent, 0)
         alarmManager.setInexactRepeating(AlarmManager.RTC_WAKEUP, calendar.timeInMillis, AlarmManager.INTERVAL_DAY, pendingIntent)
 
-        Toast.makeText(context, "Reminder on $time AM", Toast.LENGTH_SHORT).show()
+        Toast.makeText(context, context.getString(R.string.reminder_on_toast), Toast.LENGTH_SHORT).show()
         Log.d(TAG, "Alarm $time AM On")
     }
 
@@ -78,7 +78,7 @@ class AlarmReceiver : BroadcastReceiver() {
         val pendingIntent = PendingIntent.getBroadcast(context, requestCode, intent, 0)
         pendingIntent.cancel()
         alarmManager.cancel(pendingIntent)
-        Toast.makeText(context, "Reminder off", Toast.LENGTH_SHORT).show()
+        Toast.makeText(context, context.getString(R.string.reminder_off_toast), Toast.LENGTH_SHORT).show()
         Log.d(TAG, "Alarm Off")
     }
 
@@ -94,7 +94,7 @@ class AlarmReceiver : BroadcastReceiver() {
         val builder = NotificationCompat.Builder(context, channelId)
             .setSmallIcon(R.mipmap.ic_dicoding_round)
             .setContentTitle(title)
-            .setContentText("It's 09.00 AM, Time to Open The App")
+            .setContentText(context.resources.getString(R.string.notification_text_on_nine))
             .setColor(ContextCompat.getColor(context, android.R.color.transparent))
             .setVibrate(longArrayOf(1000, 1000, 1000, 1000, 1000))
             .setSound(alarmSound)
