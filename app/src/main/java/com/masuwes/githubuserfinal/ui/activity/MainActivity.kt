@@ -33,7 +33,9 @@ class MainActivity : AppCompatActivity(), RecyclerViewClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        supportActionBar?.title = "Github FindUser"
+        supportActionBar?.apply {
+            title = resources.getString(R.string.app_name)
+        }
 
         adapter = MainAdapter()
         adapter.notifyDataSetChanged()

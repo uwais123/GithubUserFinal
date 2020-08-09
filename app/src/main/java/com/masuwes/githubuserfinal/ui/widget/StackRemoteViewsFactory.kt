@@ -11,7 +11,7 @@ import android.widget.RemoteViewsService
 import com.bumptech.glide.Glide
 import com.masuwes.githubuserfinal.R
 import com.masuwes.githubuserfinal.db.DatabaseContract.GitColumns.Companion.CONTENT_URI
-import com.masuwes.githubuserfinal.helper.FavouriteItem
+import com.masuwes.githubuserfinal.helper.FavoriteItem
 import java.util.concurrent.ExecutionException
 
 class StackRemoteViewsFactory(private val context: Context) : RemoteViewsService.RemoteViewsFactory {
@@ -35,8 +35,8 @@ class StackRemoteViewsFactory(private val context: Context) : RemoteViewsService
     override fun getCount(): Int = listFavoriteUsers?.count ?: 0
 
     override fun getViewAt(position: Int): RemoteViews {
-        val item: FavouriteItem = getItem(position)
-        val rv = RemoteViews(context.packageName, R.layout.list_widget)
+        val item: FavoriteItem = getItem(position)
+        val remoteViews = RemoteViews(context.packageName, R.layout.list_widget)
 
         var bitmap: Bitmap? = null
         try {
@@ -51,20 +51,20 @@ class StackRemoteViewsFactory(private val context: Context) : RemoteViewsService
             e.printStackTrace()
         }
 
-        rv.setImageViewBitmap(R.id.imageView, bitmap)
+        remoteViews.setImageViewBitmap(R.id.imageView, bitmap)
         val extras = Bundle()
 
-        //ambil username
+        // ambil username
         extras.putString(FavoriteUserWidget.EXTRA_ITEM, item.username)
         val fillInIntent = Intent()
         fillInIntent.putExtras(extras)
-        rv.setOnClickFillInIntent(R.id.imageView, fillInIntent)
-        return rv
+        remoteViews.setOnClickFillInIntent(R.id.imageView, fillInIntent)
+        return remoteViews
     }
 
-    private fun getItem(position: Int): FavouriteItem {
+    private fun getItem(position: Int): FavoriteItem {
         listFavoriteUsers?.moveToPosition(position)?.let { check(it) { "Invalid Position!" } }
-        return FavouriteItem(listFavoriteUsers)
+        return FavoriteItem(listFavoriteUsers)
     }
 
     override fun getLoadingView(): RemoteViews? = null
@@ -75,7 +75,7 @@ class StackRemoteViewsFactory(private val context: Context) : RemoteViewsService
 
     override fun hasStableIds(): Boolean = false
 
-    override fun onDestroy() { }
+    override fun onDestroy() {}
 
 }
 

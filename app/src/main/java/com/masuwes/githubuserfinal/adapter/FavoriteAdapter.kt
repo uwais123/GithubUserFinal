@@ -1,6 +1,5 @@
 package com.masuwes.githubuserfinal.adapter
 
-import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Intent
 import android.net.Uri
@@ -28,16 +27,6 @@ class FavoriteAdapter(private val activity: Activity): RecyclerView.Adapter<Favo
             notifyDataSetChanged()
         }
 
-    fun addItem(userModel: UserModel) {
-        this.listFavorite.add(userModel)
-        notifyItemInserted(this.listFavorite.size - 1)
-    }
-
-    fun removeItem(position: Int) {
-        this.listFavorite.removeAt(position)
-        notifyItemRemoved(position)
-        notifyItemChanged(position, this.listFavorite.size)
-    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val mView = LayoutInflater.from(parent.context).inflate(R.layout.list_item, parent, false)
@@ -51,7 +40,6 @@ class FavoriteAdapter(private val activity: Activity): RecyclerView.Adapter<Favo
     }
 
     inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
-        @SuppressLint("ResourceType")
         fun bind(userModel: UserModel){
             with(itemView){
                 Picasso.get().load(Uri.parse(userModel.avatar)).into(image_avatar)

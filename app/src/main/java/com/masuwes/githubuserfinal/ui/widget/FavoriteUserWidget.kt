@@ -10,17 +10,14 @@ import android.widget.Toast
 import androidx.core.net.toUri
 import com.masuwes.githubuserfinal.R
 
-/**
- * Implementation of App Widget functionality.
- */
+
 class FavoriteUserWidget : AppWidgetProvider() {
 
     companion object {
         private const val TOAST_ACTION = "com.masuwes.githubuserfinal.TOAST_ACTION"
         const val EXTRA_ITEM = "com.masuwes.githubuserfinal.EXTRA_ITEM"
 
-        //pindahkan fungsi ini ke companion object, karena kita akan memanggil fungsi ini dari luar kelas
-        //Kita memasang RemoteAdapter ke dalam widget dengan menggunakan obyek Intent dan nilai id dari RemoteView yaitu stack_view
+
         private fun updateAppWidget(context: Context, appWidgetManager: AppWidgetManager, appWidgetId: Int) {
             val intent = Intent(context, StackWidgetService::class.java)
             intent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, appWidgetId)
@@ -59,11 +56,7 @@ class FavoriteUserWidget : AppWidgetProvider() {
     }
 
 
-    override fun onEnabled(context: Context) {
-        // Enter relevant functionality for when the first widget is created
-    }
+    override fun onEnabled(context: Context) {}
 
-    override fun onDisabled(context: Context) {
-        // Enter relevant functionality for when the last widget is disabled
-    }
+    override fun onDisabled(context: Context) {}
 }

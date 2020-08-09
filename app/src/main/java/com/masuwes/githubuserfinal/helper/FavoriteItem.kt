@@ -7,7 +7,7 @@ import com.masuwes.githubuserfinal.db.DatabaseContract.GitColumns.Companion._ID
 import com.masuwes.githubuserfinal.db.DatabaseContract.getColumnInt
 import com.masuwes.githubuserfinal.db.DatabaseContract.getColumnString
 
-class FavouriteItem (cursor: Cursor?) {
+class FavoriteItem (cursor: Cursor?) {
     var id : Int? = 0
     var username: String? = null
     var avatar: String? = null

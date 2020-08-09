@@ -32,7 +32,6 @@ class FavoriteActivity : AppCompatActivity() {
 
         adapter = FavoriteAdapter(this)
 
-
         GlobalScope.launch(Dispatchers.Main) {
             val deferredGit = async(Dispatchers.IO) {
                 val cursor = contentResolver?.query(CONTENT_URI, null, null, null, null)

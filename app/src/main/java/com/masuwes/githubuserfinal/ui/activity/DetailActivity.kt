@@ -58,7 +58,9 @@ class DetailActivity : AppCompatActivity() {
         // Intent to Detail
         userModel = intent.getParcelableExtra<UserModel>(EXTRA_STATE) as UserModel
         detail_username.text = userModel?.login
-        Picasso.get().load(Uri.parse(userModel?.avatar)).into(detail_avatar)
+        Picasso.get()
+            .load(Uri.parse(userModel?.avatar))
+            .into(detail_avatar)
 
         uriWithId = Uri.parse(CONTENT_URI.toString() + "/" + userModel?.id)
 

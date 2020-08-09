@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Submission Final</string>
+    <string name="home_title">Github FindUser</string>
     <string name="search" >Cari Nama Pengguna</string>
     <string name="noResult">Temukan Pengguna!</string>
     <string name="searchForResult">Klik ikon pencarian untuk mulai mencari</string>
