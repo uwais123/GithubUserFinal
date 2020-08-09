@@ -15,8 +15,8 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.masuwes.githubuserfinal.R
 import com.masuwes.githubuserfinal.adapter.SectionPagerAdapter
-import com.masuwes.githubuserfinal.db.DatabaseContract.CONTENT_URI
 import com.masuwes.githubuserfinal.db.DatabaseContract.GitColumns.Companion.AVATAR
+import com.masuwes.githubuserfinal.db.DatabaseContract.GitColumns.Companion.CONTENT_URI
 import com.masuwes.githubuserfinal.db.DatabaseContract.GitColumns.Companion.LOGIN_NAME
 import com.masuwes.githubuserfinal.helper.MappingHelper
 import com.masuwes.githubuserfinal.model.UserModel

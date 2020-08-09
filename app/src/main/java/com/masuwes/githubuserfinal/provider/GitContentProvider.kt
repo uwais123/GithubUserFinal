@@ -7,7 +7,7 @@ import android.content.UriMatcher
 import android.database.Cursor
 import android.net.Uri
 import com.masuwes.githubuserfinal.db.DatabaseContract.AUTHORITY
-import com.masuwes.githubuserfinal.db.DatabaseContract.CONTENT_URI
+import com.masuwes.githubuserfinal.db.DatabaseContract.GitColumns.Companion.CONTENT_URI
 import com.masuwes.githubuserfinal.db.DatabaseContract.GitColumns.Companion.TABLE_NAME
 import com.masuwes.githubuserfinal.helper.GitHelper
 
