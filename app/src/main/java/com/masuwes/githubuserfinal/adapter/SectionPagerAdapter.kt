@@ -17,7 +17,7 @@ class SectionPagerAdapter(private val context: Context, fragmentManager: Fragmen
     private var username: String? = "username"
 
     @StringRes
-    private val TAB_TITLES = intArrayOf (
+    private val tabTitle = intArrayOf (
         R.string.tab_text1,
         R.string.tab_text2
     )
@@ -54,7 +54,7 @@ class SectionPagerAdapter(private val context: Context, fragmentManager: Fragmen
 
     @Nullable
     override fun getPageTitle(position: Int): CharSequence? {
-        return context.resources.getString(TAB_TITLES[position])
+        return context.resources.getString(tabTitle[position])
     }
 
 

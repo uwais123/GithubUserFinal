@@ -9,7 +9,6 @@ import android.content.Context
 import android.content.Intent
 import android.media.RingtoneManager
 import android.os.Build
-import android.util.Log
 import android.widget.Toast
 import androidx.core.app.NotificationCompat
 import androidx.core.content.ContextCompat
@@ -46,7 +45,6 @@ class AlarmReceiver : BroadcastReceiver() {
         val notifId = if (type.equals(TYPE_ALARM_ONE_TIME, ignoreCase = true)) ID_ONE_TIME else ID_REPEATING
 
         showAlarmNotification(context, title, notifId)
-        Log.d(TAG,"Alarm on")
     }
 
     fun setRepeatAlarm(context: Context, type: String, time: String) {
@@ -61,14 +59,12 @@ class AlarmReceiver : BroadcastReceiver() {
             set(Calendar.HOUR_OF_DAY, Integer.parseInt(timeArray[0]))
             set(Calendar.MINUTE, Integer.parseInt(timeArray[1]))
             set(Calendar.SECOND, 0)
-            Log.d(TAG, "Set Time Success")
         }
 
         val pendingIntent = PendingIntent.getBroadcast(context, ID_REPEATING, intent, 0)
         alarmManager.setInexactRepeating(AlarmManager.RTC_WAKEUP, calendar.timeInMillis, AlarmManager.INTERVAL_DAY, pendingIntent)
 
         Toast.makeText(context, context.getString(R.string.reminder_on_toast), Toast.LENGTH_SHORT).show()
-        Log.d(TAG, "Alarm $time AM On")
     }
 
     fun cancelAlarm(context: Context, type: String) {
@@ -79,7 +75,6 @@ class AlarmReceiver : BroadcastReceiver() {
         pendingIntent.cancel()
         alarmManager.cancel(pendingIntent)
         Toast.makeText(context, context.getString(R.string.reminder_off_toast), Toast.LENGTH_SHORT).show()
-        Log.d(TAG, "Alarm Off")
     }
 
     private fun showAlarmNotification(context: Context, title: String, notifId: Int) {

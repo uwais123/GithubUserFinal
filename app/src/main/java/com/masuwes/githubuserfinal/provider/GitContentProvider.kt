@@ -37,13 +37,11 @@ class GitContentProvider : ContentProvider() {
         uri: Uri, projection: Array<String>?, selection: String?,
         selectionArgs: Array<String>?, sortOrder: String?
     ): Cursor? {
-        val cursor: Cursor?
-        when (sUriMatcher.match(uri)) {
-            GIT -> cursor = gitHelper.queryAll()
-            GIT_ID -> cursor = gitHelper.queryById(uri.lastPathSegment.toString())
-            else -> cursor = null
+        return when (sUriMatcher.match(uri)) {
+            GIT -> gitHelper.queryAll()
+            GIT_ID -> gitHelper.queryById(uri.lastPathSegment.toString())
+            else -> null
         }
-        return cursor
     }
 
     override fun getType(uri: Uri): String? {
