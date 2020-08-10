@@ -6,6 +6,7 @@ import android.database.sqlite.SQLiteOpenHelper
 import com.masuwes.githubuserfinal.db.DatabaseContract.GitColumns.Companion.AVATAR
 import com.masuwes.githubuserfinal.db.DatabaseContract.GitColumns.Companion.LOGIN_NAME
 import com.masuwes.githubuserfinal.db.DatabaseContract.GitColumns.Companion.TABLE_NAME
+import com.masuwes.githubuserfinal.db.DatabaseContract.GitColumns.Companion._ID
 
 internal class DatabaseHelper(context: Context): SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
 
@@ -14,7 +15,8 @@ internal class DatabaseHelper(context: Context): SQLiteOpenHelper(context, DATAB
         private const val DATABASE_VERSION = 1
 
         private const val SQL_CREATE_TABLE_FAV = "CREATE TABLE $TABLE_NAME" +
-                "($LOGIN_NAME TEXT NOT NULL UNIQUE," +
+                "($_ID INTEGER PRIMARY KEY AUTOINCREMENT," +
+                "$LOGIN_NAME TEXT NOT NULL UNIQUE," +
                 "$AVATAR TEXT NOT NULL)"
     }
 
