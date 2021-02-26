@@ -119,7 +119,6 @@
         app:tabTextAppearance="@style/MyCustomTextAppearance"
         app:tabTextColor="@android:color/white">
 
-
     </com.google.android.material.tabs.TabLayout>
 
 

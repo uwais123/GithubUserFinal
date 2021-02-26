@@ -18,7 +18,7 @@ class DetailViewModel: ViewModel() {
 
     private val dataDetail = MutableLiveData<UserModel>()
 
-    fun setDetailUser(login: String?){
+    fun setDetailUser(login: String?) {
         val asyncClient = AsyncHttpClient()
         asyncClient.addHeader("Authorization", "token 0c8b312623b4c7a626a7840635915e8364f0b936")
         asyncClient.addHeader("User-Agent", "request")

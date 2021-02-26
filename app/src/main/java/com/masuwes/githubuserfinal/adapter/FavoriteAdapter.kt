@@ -18,7 +18,9 @@ import kotlinx.android.synthetic.main.list_item.view.*
 class FavoriteAdapter(private val activity: Activity): RecyclerView.Adapter<FavoriteAdapter.ViewHolder>() {
 
     val TAG = FavoriteAdapter::class.java.simpleName
+
     var listFavorite = ArrayList<UserModel>()
+
         set(listFavorite) {
             if (listFavorite.size > 0) {
                 this.listFavorite.clear()
